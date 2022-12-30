@@ -37,8 +37,8 @@ async function run() {
 
 
     app.get("/personalpost", async (req, res) => {
-      const uid =req.query.email;
-      const query = {userEmail:uid};
+      const email =req.query.email;
+      const query = {userEmail:email};
       const cursor = postCollection.find(query);
       const result = await cursor.toArray();
       console.log(result);
